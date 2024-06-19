@@ -1,0 +1,1 @@
+CREATE DATABASE prinh_db;
