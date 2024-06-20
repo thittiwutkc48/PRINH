@@ -9,7 +9,7 @@ import os
 def load_data_to_local():
     data_ingest_id = "1AAdi3CYw9yRdNLiG1Epm_TffHDBEMVVW"
     scope = ['https://www.googleapis.com/auth/drive']
-    service_account_file = "key/data-project-test-001-7c40b00754e9.json"
+    service_account_file = "key/data-project-test-001-26c6f0773834.json"
     credentials = service_account.Credentials.from_service_account_file(service_account_file, scopes=scope)
     drive_service = build('drive', 'v3', credentials=credentials)
     list_file = list_folder(drive_service,parent_folder_id=data_ingest_id)

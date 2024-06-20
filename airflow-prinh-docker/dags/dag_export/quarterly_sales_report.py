@@ -20,7 +20,7 @@ default_args = {
 dag = DAG(
     'quarterly_sales_report',
     default_args=default_args,
-    description='Generate and upload quarterly sales report to Google Drive',
+    description='Generate and upload quarterly sales report to Google Drive/param:export_param1',
     schedule_interval='0 9 1 1,4,7,10 *',  # Run on the 1st day of each quarter at 9 AM
     start_date=days_ago(1),
     catchup=False

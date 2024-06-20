@@ -1,12 +1,12 @@
 from airflow.models.variable import Variable
 from datetime import datetime 
 
-if Variable.get("insert_param2") == " ":
+if Variable.get("insert_param1") == " ":
     current_date = datetime.now()
     date_execute = current_date.strftime("%Y-%m-%d")
 
-elif Variable.get("insert_param2") != " ":
-    date_execute = Variable.get("insert_param2") 
+elif Variable.get("insert_param1") != " ":
+    date_execute = Variable.get("insert_param1") 
 
 default_config = {
 "insert_query" : f"""

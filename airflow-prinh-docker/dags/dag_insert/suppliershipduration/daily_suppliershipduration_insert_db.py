@@ -21,7 +21,7 @@ config = Variable.get("daily_suppliershipduration_insert_db", default_var=defaul
 dag = DAG(
     'daily_suppliershipduration_insert_db',
     default_args=default_args,
-    description='Insert data table suppliershipduration daily process starting on everday on 9 am',
+    description='Insert data table suppliershipduration daily process starting on everday on 9 am/param:insert_param1',
     schedule_interval='0 9 * * *',  # Run every day at 9 AM
     start_date=datetime(2024, 1, 1, 9, 0),
     catchup=False,

@@ -3,7 +3,7 @@ from datetime import datetime
 
 if Variable.get("insert_param2") == " ":
     current_date = datetime.now()
-    date_execute = current_date.strftime("%Y-%m-%d")
+    date_execute = current_date.strftime("%Y-%m")
 
 elif Variable.get("insert_param2") != " ":
     date_execute = Variable.get("insert_param2") 
@@ -18,7 +18,7 @@ WITH t1 AS (
     FROM 
         public.orders  
     WHERE 
-        orderdate LIKE '1996-12%'
+        orderdate LIKE '{date_execute}%'
 ),
 t2 AS (
     SELECT 
@@ -48,7 +48,7 @@ t4 AS (
     FROM 
         public.productsalesamountbymonth 
     WHERE 
-        yearmonth = TO_CHAR(TO_DATE('1996-12', 'YYYY-MM') - INTERVAL '1 month', 'YYYY-MM')
+        yearmonth = TO_CHAR(TO_DATE('{date_execute}', 'YYYY-MM') - INTERVAL '1 month', 'YYYY-MM')
 ),
 t5 AS (
     SELECT 

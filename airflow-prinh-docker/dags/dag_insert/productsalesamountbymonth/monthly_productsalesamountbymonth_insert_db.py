@@ -21,7 +21,7 @@ config = Variable.get("monthly_productsalesamountbymonth_insert_db", default_var
 dag = DAG(
     'monthly_productsalesamountbymonth_insert_db',
     default_args=default_args,
-    description='Insert data table productsalesamountbymonth Monthly process starting on the 1st day of each month',
+    description='Insert data table productsalesamountbymonth Monthly process starting on the 1st day of each month /param:insert_param2',
     schedule_interval='0 9 1 * *', 
     start_date=datetime(2024, 1, 1, 9, 0), 
     catchup=False,  
